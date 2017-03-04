@@ -19,6 +19,7 @@ var categoryDenyCount = {
 var app = new Framework7({
     // Default title for modals
     modalTitle: 'What\'s Next',
+    swipeBackPage: false,
 });
 
 var mainView = app.addView('.view-main', {
