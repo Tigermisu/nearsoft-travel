@@ -72,7 +72,7 @@ function populateMyEvents() {
             html += '<div class="item-title">' + event.name + ' </div>';
             html += '<div class="item-after">'  + event.category +  '</div>';
             html += "</div>";
-            html += '<div class="item-subtitle">'+ event.hour + ' @ ' + event.address +  '</div>';
+            html += '<div class="item-subtitle">'+ event.hour + ' - ' + event.date +  '</div>';
             html += '<div class="item-text">' + event.description + '</div>';
 
             html += "</div>"
@@ -202,20 +202,29 @@ function getEventID(activeEventHash) {
     return null;
 }
 
+$('input[name="email"]').keypress(function(e){
+    if(e.keyCode == 13) $('input[name="password"]').focus();
+});
+
+$('input[name="password"]').keypress(function(e){
+    if(e.keyCode == 13) $$('#login').click();
+});
+
 // login handler
 $$('#login').click(function () {
-    var username = $$('input[name="email"]').val();
-    var password = $$('input[name="password"]').val();
+    var username = $$('input[name="email"]').val().trim();
+    var password = $$('input[name="password"]').val().trim();
     var matched = false;
     // Handle username and password
     $$.each(data.users, function (i, v) {
         if (v.email == username && v.password == password) {
             mainView.router.load({pageName: 'swiper'});
             matched = true;
+            $('#usernamegoeshere').text(username);
         }
     });
     if(!matched) 
-            alert('User or password invalid.');
+            app.alert('User or password invalid.');
 });
 
 // register user handler

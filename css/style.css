@@ -2,6 +2,7 @@
     position: relative;
     overflow: hidden;
     height: calc(100vh - 56px);
+    max-width: 100vw;
 }
 
 .event, .event * {    
@@ -185,14 +186,14 @@
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #d0d0d0 !important;
+  color: #999 !important;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-  color: #d0d0d0 !important;
+  color: #999 !important;
 }
 :-ms-input-placeholder { /* IE 10+ */
-  color: #d0d0d0 !important;
+  color: #999 !important;
 }
 :-moz-placeholder { /* Firefox 18- */
-  color: #d0d0d0 !important;
+  color: #999 !important;
 }
