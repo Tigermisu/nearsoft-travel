@@ -45,6 +45,9 @@
           <div class="page-content">
             <p>Page content goes here</p>
             <!-- Link to another page -->
+            <div class="content-block">
+              <p><a href="#" class="open-login-screen">Open Login Screen</a></p>
+            </div>
             <a href="#about">About app</a>
             <a href="#services">Services</a>
           </div>
@@ -69,6 +72,50 @@
       </div>
     </div>
   </div>
+
+
+  <!-- login screen -->
+  <div class="login-screen">
+    <div class="view">
+      <div class="page">
+        <div class="page-content login-screen-content">
+          <div class="login-screen-title">My App</div>
+          <form>
+            <div class="list-block">
+              <ul>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">Username</div>
+                    <div class="item-input">
+                      <input type="text" name="username" placeholder="Your username">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">Password</div>
+                    <div class="item-input">
+                      <input type="password" name="password" placeholder="Your password">
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="list-block">
+              <ul>
+                <li><a href="#" id="login" class="item-link list-button">Sign In</a></li>
+              </ul>
+              <div class="list-block-label">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p><a href="#" class="close-login-screen">Close Login Screen</a></p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Path to Framework7 Library JS-->
   <script type="text/javascript" src="js/framework7.min.js"></script>
   <!-- Path to your app js-->
