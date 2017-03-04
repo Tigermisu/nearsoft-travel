@@ -183,3 +183,109 @@ $$('#register').click(function () {
     }
 });
 
+// Size selector
+$$('#sizeSelecter').on('click', function () {
+    app.modal({
+        title:  'Font Size',
+        text: 'Select the size of the font',
+        buttons: [
+            {
+                text: 'small',
+                onClick: function() {
+
+                }
+            },
+            {
+                text: 'Medium',
+                onClick: function() {
+
+                }
+            },
+            {
+                text: 'Big',
+                onClick: function() {
+
+                }
+            },
+        ]
+    })
+});
+
+// Language selector
+$$('#languageSelector').on('click', function () {
+    app.modal({
+        title:  'Select language',
+        verticalButtons: true,
+        buttons: [
+            {
+                text: 'Spanish',
+                onClick: function() {
+                }
+            },
+            {
+                text: 'English',
+                onClick: function() {
+                }
+            },
+            {
+                text: 'French',
+                onClick: function() {
+                }
+            },
+            {
+                text: 'Chinese',
+                onClick: function() {
+                }
+            },
+        ]
+    })
+});
+
+// Clear cache selector
+$$('#cacheSelector').on('click', function () {
+    app.modal({
+        title:  'Font Size',
+        text: 'Select the size of the font',
+        buttons: [
+            {
+                text: 'Cancel',
+                onClick: function() {
+
+                }
+            },
+            {
+                text: 'Ok',
+                onClick: function() {
+
+                }
+            },
+        ]
+    })
+});
+
+$$('#distanceSelector').on('click', function () {
+    var modal = app.modal({
+        title: 'Awesome Photos?',
+        text: 'What do you think about my photos?',
+        afterText:  '<div class="swiper-container" style="width: auto; margin:5px -15px -15px">'+
+        '<div class="swiper-pagination"></div>'+
+        '<div class="swiper-wrapper">'+
+        '<div class="swiper-slide"><img src="..." height="150" style="display:block"></div>' +
+        '<div class="swiper-slide"><img src="..." height="150" style="display:block"></div>'+
+        '</div>'+
+        '</div>',
+        buttons: [
+            {
+                text: 'Bad :('
+            },
+            {
+                text: 'Awesome!',
+                bold: true,
+                onClick: function () {
+                    myApp.alert('Thanks! I know you like it!')
+                }
+            },
+        ]
+    })
+    myApp.swiper($$(modal).find('.swiper-container'), {pagination: '.swiper-pagination'});
+});
