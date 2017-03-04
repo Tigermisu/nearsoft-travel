@@ -106,3 +106,53 @@
 .navbar-inner {
     padding: 0 8px;
 }
+
+#eventsContent .item-media img {
+    max-width: 80px;
+    max-height: 80px;
+    margin: 0px auto;
+    display: block;
+}
+
+.event-list-photo {
+    background-size: cover;
+    background-position: center center;
+    background-color: #d0d0d0;
+    width: 80px;
+    height: 80px;
+}
+
+.emoji {
+    width: 33%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    position: absolute;
+    pointer-events: none;
+    top: 4%;
+    opacity: 0;
+    -webkit-transition: all 1s; 
+    transition: all 1s;
+}
+
+.emoji.like, .emoji.dislike {
+    opacity: 1;
+    transform: translate(0, 10%);
+}
+
+.emoji.like.fade, .emoji.dislike.fade {
+    opacity: 0;
+    -webkit-transition: opacity 0.5s; 
+    transition: opacity 0.5s;
+}
+
+.emoji.dislike {
+    background-image: url(../img/Sad.png);
+    left: 10%;
+}
+
+.emoji.like {
+    background-image: url(../img/Happy.png);
+    right: 10%;
+}
