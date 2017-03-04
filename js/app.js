@@ -156,7 +156,5 @@ $$('#register').click(function () {
     else {
         app.alert("fill all fields");
     }
-
-
 });
 
