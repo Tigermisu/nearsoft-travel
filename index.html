@@ -26,26 +26,41 @@
   <!-- Left panel -->
   <div class="panel panel-left panel-cover">
     <div class="content-block">
-      <p>Left panel</p>
+      <p>What's Next?</p>
+      <hr>
       <div class="list-block">
         <ul>
-          <li class="item-content">
-            <div class="item-inner">
-              <div class="item-title">My Events</div>
-              <div class="item-media"><i class="icon f7-icons">person</i></div>
-            </div>
-          </li>
-          <li class="item-content">
-            <div class="item-inner">
-              <div class="item-title">Add Event</div>
-              <div class="item-media"><i class="icon f7-icons">person</i></div>
-            </div>
-          </li>
-          <a href="#" data-panel="right" class="open-panel item-content">
-            <div class="item-inner">
-              <div class="item-title">Settings</div>
-              <div class="item-media"><i class="icon f7-icons">person</i></div>
-            </div>
+          <a href="#swiper" class="panel-close">
+            <li class="item-content">
+              <div class="item-inner">
+                <div class="item-title">Discover</div>
+                <div class="item-media"><i class="icon f7-icons">person</i></div>
+              </div>
+            </li>
+          </a>
+          <a href="#myevents" class="panel-close">
+            <li class="item-content">
+              <div class="item-inner">
+                <div class="item-title">My Events</div>
+                <div class="item-media"><i class="icon f7-icons">person</i></div>
+              </div>
+            </li>
+          </a>
+          <a href="#" class="panel-close">
+            <li class="item-content">
+              <div class="item-inner">
+                <div class="item-title">Add Event</div>
+                <div class="item-media"><i class="icon f7-icons">person</i></div>
+              </div>
+            </li>
+          </a>          
+          <a href="#" data-panel="right" class="open-panel">
+            <li class="item-content">
+              <div class="item-inner">
+                <div class="item-title">Settings</div>
+                <div class="item-media"><i class="icon f7-icons">person</i></div>
+              </div>
+            </li>
           </a>
         </ul>
       </div>
@@ -103,7 +118,7 @@
       <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
       <div class="pages navbar-fixed">
         <!-- Page, "data-page" contains page name -->
-        <div data-page="index" class="page">
+        <div data-page="index" class="page cached">
           <!-- Top Navbar. In Material theme it should be inside of the page-->
           <div class="navbar">
             <div class="navbar-inner">
@@ -169,7 +184,7 @@
                 <a href="#" class="open-panel"><i class="icon icon-bars"></i></a>
               </div>
               <div class="center">
-                What's Next
+                Discover Events
               </div>
               <div class="right"></div>
             </div>
@@ -198,38 +213,43 @@
           </div>
         </div>
         <!-- login screen -->
-        <div class="page cached" data-page="login">
-          <div class="page-content login-screen-content">
-            <div class="login-screen-title">What's Next</div>
+        <div class="page" data-page="login">
+          <div class="page-content login-screen-content gradient-bg">
+            <div class="login-screen-title">
+              <img src="img/WhatsNextlogo.png" alt="What's Next?">
+            </div>
             <form>
               <div class="list-block">
                 <ul>
                   <li class="item-content">
                     <div class="item-inner">
-                      <div class="item-title label">Username</div>
                       <div class="item-input">
-                        <input type="text" name="username" placeholder="Your username">
+                        <input type="email" name="email" placeholder="Email">
                       </div>
                     </div>
                   </li>
                   <li class="item-content">
                     <div class="item-inner">
-                      <div class="item-title label">Password</div>
                       <div class="item-input">
-                        <input type="password" name="password" placeholder="Your password">
+                        <input type="password" name="password" placeholder="Password">
                       </div>
                     </div>
                   </li>
                 </ul>
               </div>
               <div class="list-block">
-                <ul>
-                  <li><a href="#" id="login" class="item-link list-button">Sign In</a></li>
-                  <li><a href="#register" class="item-link list-button">Register</a></li>
-                </ul>
+                <div class="row">
+                  <div class="col-10"></div>
+                  <div class="col-40">
+                    <a href="#" id="login" class="color-indigo button-fill button-raised button">Sign In</a>
+                  </div>
+                  <div class="col-40">
+                    <a href="#register" class="color-indigo button-fill button-raised button">Register</a>
+                  </div>
+                  <div class="col-10"></div>
+                </div>
                 <div class="list-block-label">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  <p><a href="#index" class="close-login-screen">Close Login Screen</a></p>
+                  <p><a href="#">Forgot your password?</a></p>
                 </div>
               </div>
             </form>
@@ -240,7 +260,7 @@
           <div class="navbar">
             <div class="navbar-inner">
               <div class="left">
-                <a href="#" class="#login"><i class="icon icon-back"></i></a>
+                <a href="#login"><i class="icon icon-back"></i></a>
               </div>
               <div class="center">
                 What's Next
@@ -341,7 +361,7 @@
                 <i class="icon icon-bars"></i>
               </div>
               <div class="center">
-                What's Next
+                Options
               </div>
               <div class="right"></div>
             </div>
@@ -399,7 +419,7 @@
                 <i class="icon icon-bars"></i>
               </div>
               <div class="center">
-                What's Next
+                Settings
               </div>
               <div class="right"></div>
             </div>

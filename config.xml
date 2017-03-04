@@ -17,8 +17,8 @@
 
     <plugin name="cordova-plugin-whitelist" />
     
-    <icon src="icon.fw.png" />  
-    <splash src="splash.fw.png" />
+    <icon src="icon.png" />  
+    <splash src="splash.png" />
 
     <access origin="*" />
 

@@ -42,11 +42,19 @@ $('.icon.btn img').click(function () {
     window.open("https://www.google.com/maps?q=loc:" + lat + "," + lng);
 });
 
+$('ul > .panel-close').click(function(){
+    app.closePanel();
+});
+
 app.onPageInit('swiper', function (page) {
     prepareNextEvent();
 });
 
 app.onPageInit('myevents', function (page) {
+    populateMyEvents();
+});
+
+app.onPageReinit('myevents', function(page) {
     populateMyEvents();
 });
 
@@ -198,12 +206,16 @@ function getEventID(activeEventHash) {
 $$('#login').click(function () {
     var username = $$('input[name="email"]').val();
     var password = $$('input[name="password"]').val();
+    var matched = false;
     // Handle username and password
     $$.each(data.users, function (i, v) {
         if (v.email == username && v.password == password) {
             mainView.router.load({pageName: 'swiper'});
+            matched = true;
         }
     });
+    if(!matched) 
+            alert('User or password invalid.');
 });
 
 // register user handler

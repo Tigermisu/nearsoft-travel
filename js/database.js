@@ -14,6 +14,11 @@ var data = {
             email: "admin@whatsnext.io",
             password: "admin"
         },
+
+        4: {
+            email: "u@u.u",
+            password: "u"
+        },
     },
 
     features: {

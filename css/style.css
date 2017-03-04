@@ -156,3 +156,43 @@
     background-image: url(../img/Happy.png);
     right: 10%;
 }
+
+.gradient-bg {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+38&0+0,0.65+38 */
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 20%, rgba(0,0,0,1) 60%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 20%,rgba(0,0,0,1) 60%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 20%,rgba(0,0,0,1) 60%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+}
+
+.login-screen-content * {
+    color: #d0d0d0 !important;
+}
+
+.login-screen-title img {
+    max-width: 60%;
+    margin: 10px auto;
+    display: block;
+}
+
+.login-screen-content input {
+    border-bottom: #d0d0d0 solid 1px !important;
+    padding: 8px;
+}
+
+.navbar {
+    background-color: #3f51b5!important
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #d0d0d0 !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #d0d0d0 !important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #d0d0d0 !important;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #d0d0d0 !important;
+}
