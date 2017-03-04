@@ -261,7 +261,7 @@ $$('#register').click(function () {
         lengthusers++;
     });
 
-    var usernameNew = $$('input[name="email"]').val();
+    var usernameNew = $$('input[name="remail"]').val();
     var passwordNew = $$('input[name="passwordRegister"]').val();
     var passwordconfirm = $$('input[name="passwordConfirm"]').val();
 
@@ -270,12 +270,12 @@ $$('#register').click(function () {
         if (passwordNew == passwordconfirm) {
             data.users[lengthusers] = {email: usernameNew, password: passwordNew};
             var formData = app.formToData('#register-form');
-            alert(JSON.stringify(formData));
+            //alert(JSON.stringify(formData));
             mainView.router.load({pageName: 'login'});
-            app.alert("registered successfully, you can login now")
+            app.alert("Registered successfully. Please Log in.")
         }
         else {
-            app.alert("passwords doesn't match");
+            app.alert("Passwords dont match");
         }
 
     }
