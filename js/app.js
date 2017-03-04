@@ -311,8 +311,8 @@ $$('#languageSelector').on('click', function () {
 // Clear cache selector
 $$('#cacheSelector').on('click', function () {
     app.modal({
-        title:  'Font Size',
-        text: 'Select the size of the font',
+        title:  'Clear cache',
+        text: 'Are you sure?',
         buttons: [
             {
                 text: 'Cancel',
@@ -328,31 +328,4 @@ $$('#cacheSelector').on('click', function () {
             },
         ]
     })
-});
-
-$$('#distanceSelector').on('click', function () {
-    var modal = app.modal({
-        title: 'Awesome Photos?',
-        text: 'What do you think about my photos?',
-        afterText:  '<div class="swiper-container" style="width: auto; margin:5px -15px -15px">'+
-        '<div class="swiper-pagination"></div>'+
-        '<div class="swiper-wrapper">'+
-        '<div class="swiper-slide"><img src="..." height="150" style="display:block"></div>' +
-        '<div class="swiper-slide"><img src="..." height="150" style="display:block"></div>'+
-        '</div>'+
-        '</div>',
-        buttons: [
-            {
-                text: 'Bad :('
-            },
-            {
-                text: 'Awesome!',
-                bold: true,
-                onClick: function () {
-                    myApp.alert('Thanks! I know you like it!')
-                }
-            },
-        ]
-    })
-    myApp.swiper($$(modal).find('.swiper-container'), {pagination: '.swiper-pagination'});
 });

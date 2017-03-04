@@ -71,12 +71,13 @@
       <p>Settings</p>
       <div class="list-block">
         <ul>
-          <li class="item-content">
+
+          <a href="#" data-picker=".picker-1" class="open-picker item-content">
             <div class="item-inner">
               <div class="item-title">Username</div>
               <div class="item-media"><i class="icon f7-icons">person</i></div>
             </div>
-          </li>
+          </a>
           <li class="item-content" id="languageSelector">
             <div class="item-inner">
               <div class="item-title">Language</div>
@@ -520,6 +521,31 @@
       </div>
     </div>
   </div>
+
+  <!-- Picker -->
+  <div class="picker-modal picker-1">
+    <div class="toolbar">
+      <div class="toolbar-inner">
+        <div class="left"></div>
+        <div class="right"><a href="#" class="close-picker">Close</a></div>
+      </div>
+    </div>
+    <div class="picker-modal-inner">
+      <div class="content-block">
+        <h4>Select the maximum distance of the events you want to see</h4>
+<div class="no-toolbar">
+    <div class="left">20k</div>
+    <div class="right">500k</div>
+</div>
+            <div class="item-input">
+          <div class="range-slider">
+              <input type="range" min="20k" max="500k" step="50k">
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Path to Framework7 Library JS-->
   <script type="text/javascript" src="js/framework7.min.js"></script>
   <!-- Path to your app js-->
