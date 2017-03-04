@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="css/framework7.material.colors.min.css">
   <!-- Path to your custom app styles-->
   <link rel="stylesheet" href="css/style.css">
+  <!-- Framework7 fonts and icons-->
+  <link rel="stylesheet" href="css/framework7-icons.css">
 </head>
 
 <body>
@@ -43,6 +45,7 @@
             <a href="#about">About app</a>
             <a href="#services">Services</a>
             <a href="#swiper">Swiper</a>
+            <a href="#register">register</a>
           </div>
         </div>
         <!-- About page -->
@@ -122,7 +125,7 @@
               <div class="list-block">
                 <ul>
                   <li><a href="#" id="login" class="item-link list-button">Sign In</a></li>
-                  <li><a href="#" id="register" class="item-link list-button">Register</a></li>
+                  <li><a href="#register" class="item-link list-button">Register</a></li>
                 </ul>
                 <div class="list-block-label">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -132,6 +135,107 @@
             </form>
           </div>
         </div>
+        <!-- Register screen -->
+        <div class="page cached" data-page="register">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="left">
+                <i class="icon icon-bars"></i>
+              </div>
+              <div class="center">
+                What's Next
+              </div>
+              <div class="right"></div>
+            </div>
+          </div>
+          <div class="page-content">
+            <h3>Register to  What's Next</h3>
+            <form id="register-form" class="list-block">
+              <div class="list-block">
+                <ul>
+                  <!-- Text inputs -->
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon f7-icons">person</i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Name</div>
+                        <div class="item-input">
+                          <input type="text" placeholder="Your name" name="name">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon f7-icons">email</i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">E-mail</div>
+                        <div class="item-input">
+                          <input type="email" placeholder="E-mail" name="email">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon f7-icons">lock</i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Password</div>
+                        <div class="item-input">
+                          <input type="password" placeholder="Password" name="passwordRegister">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon f7-icons">lock_fill</i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Confirm Password</div>
+                        <div class="item-input">
+                          <input type="password" placeholder="Confirm Password" name="passwordConfirm">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- Select -->
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon f7-icons">persons</i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Gender</div>
+                        <div class="item-input">
+                          <select name="gender">
+                            <option>Male</option>
+                            <option>Female</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- Date -->
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon f7-icons">calendar</i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">Birth date</div>
+                        <div class="item-input">
+                          <input type="date" placeholder="Birth day" value="2014-04-30" name="birthday">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </form>
+
+            <div class="content-block">
+              <a id="register" href="#" class="button form-to-data">Register</a>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </div>
   </div>

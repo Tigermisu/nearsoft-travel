@@ -28,10 +28,10 @@ $('.event-photo').on('swiperight', function () {
     swipeEvent("right")
 });
 
-$('.icon.btn img').click(function(){
+$('.icon.btn img').click(function () {
     var lat = $(this).data('lat'),
         lng = $(this).data('lng');
-    window.open("https://www.google.com/maps?q=loc:" + lat +"," + lng);
+    window.open("https://www.google.com/maps?q=loc:" + lat + "," + lng);
 });
 
 app.onPageInit('swiper', function (page) {
@@ -39,7 +39,7 @@ app.onPageInit('swiper', function (page) {
 });
 
 function swipeEvent(direction) {
-    if(direction == "right") {
+    if (direction == "right") {
         var activeEventHash = ($('.event-data h2').text() + $('.event-data p').eq(0).text()).hashCode();
         savedEvents.push(getEventID(activeEventHash));
     }
@@ -93,12 +93,12 @@ function shuffle(a) {
     return a;
 }
 
-String.prototype.hashCode = function(){
+String.prototype.hashCode = function () {
     var hash = 0;
     if (this.length == 0) return hash;
     for (var i = 0; i < this.length; i++) {
         var character = this.charCodeAt(i);
-        hash = ((hash<<5)-hash)+character;
+        hash = ((hash << 5) - hash) + character;
         hash = hash & hash; // Convert to 32bit integer
     }
     return hash;
@@ -108,7 +108,7 @@ function getEventID(activeEventHash) {
     for (var property in data.features) {
         if (data.features.hasOwnProperty(property)) {
             var hash = (data.features[property].name + data.features[property].description).hashCode();
-            if(hash == activeEventHash) return property;
+            if (hash == activeEventHash) return property;
         }
     }
     return null;
@@ -116,7 +116,7 @@ function getEventID(activeEventHash) {
 
 // login handler
 $$('#login').click(function () {
-    var username = $$('input[name="username"]').val();
+    var username = $$('input[name="email"]').val();
     var password = $$('input[name="password"]').val();
     // Handle username and password
     $$.each(data.users, function (i, v) {
@@ -133,15 +133,30 @@ $$('#register').click(function () {
 
     $$.each(data.users, function (i, v) {
         lengthusers++;
-        console.log("a");
     });
 
-    console.log(lengthusers);
+    var usernameNew = $$('input[name="email"]').val();
+    var passwordNew = $$('input[name="passwordRegister"]').val();
+    var passwordconfirm = $$('input[name="passwordConfirm"]').val();
 
-    var usernameNew = $$('input[name="username"]').val();
-    var passwordNew = $$('input[name="password"]').val();
+    if (usernameNew.length != 0 && passwordNew.length != 0) {
 
-    data.users[lengthusers] = {email: usernameNew, password: passwordNew};
+        if (passwordNew == passwordconfirm) {
+            data.users[lengthusers] = {email: usernameNew, password: passwordNew};
+            var formData = app.formToData('#register-form');
+            alert(JSON.stringify(formData));
+            mainView.router.load({pageName: 'login'});
+            app.alert("registered successfully, you can login now")
+        }
+        else {
+            app.alert("passwords doesn't match");
+        }
+
+    }
+    else {
+        app.alert("fill all fields");
+    }
+
 
 });
 
