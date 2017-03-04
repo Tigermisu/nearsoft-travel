@@ -9,7 +9,7 @@
   <!-- Color theme for statusbar -->
   <meta name="theme-color" content="#2196f3">
   <!-- Your app title -->
-  <title>My App</title>
+  <title>What's Next</title>
   <!-- Path to Framework7 Library CSS, Material Theme -->
   <link rel="stylesheet" href="css/framework7.material.min.css">
   <!-- Path to Framework7 color related styles, Material Theme -->
@@ -24,21 +24,13 @@
     <!-- Your main view, should have "view-main" class -->
     <div class="view view-main">
       <!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
-      <div class="pages navbar-fixed toolbar-fixed">
+      <div class="pages navbar-fixed">
         <!-- Page, "data-page" contains page name -->
         <div data-page="index" class="page">
           <!-- Top Navbar. In Material theme it should be inside of the page-->
           <div class="navbar">
             <div class="navbar-inner">
               <div class="center">Awesome App</div>
-            </div>
-          </div>
-          <!-- Toolbar. In Material theme it should be inside of the page-->
-          <div class="toolbar">
-            <div class="toolbar-inner">
-              <!-- Toolbar links -->
-              <a href="#" class="link">Link 1</a>
-              <a href="#" class="link">Link 2</a>
             </div>
           </div>
           <!-- Scrollable page content -->
@@ -50,6 +42,7 @@
             </div>
             <a href="#about">About app</a>
             <a href="#services">Services</a>
+            <a href="#swiper">Swiper</a>
           </div>
         </div>
 
@@ -71,6 +64,44 @@
       </div>
     </div>
   </div>
+
+        <!-- Swiper page -->
+        <div class="page cached" data-page="swiper">
+            <div class="navbar">
+              <div class="navbar-inner">
+                <div class="left">  
+                  <i class="icon icon-bars"></i>
+                </div>
+                <div class="center">
+                  What's Next
+                </div>
+                <div class="right"></div>
+              </div>
+            </div>
+          <div class="page-content">
+            <div class="event">
+              <div class="event-photo" style="background-image: url(http://cdn2-www.comingsoon.net/assets/uploads/gallery/untitled-wolverine-sequel/cuaiczwueaaid_w-jpg-large.jpg)">
+                
+              </div>
+              <div class="event-transition" style="right: 100%; background-image: url(http://ventas.donboleton.com/uplimage/bellabestia-cuu300.jpg);">
+
+                </div>
+              <div class="event-data">
+                <div class="left-icons">
+                  <div class="icon category">
+                    <img src="img/tree.png">
+                  </div>
+                  <div class="icon btn">
+                    <img src="img/location.png">
+                  </div>
+                </div>
+                <h2>Evento</h2>
+                <p>Funcion de Cine chida</p>
+                <p>9:00pm @ Cinepolis</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
   <!-- login screen -->
@@ -119,6 +150,9 @@
   <!-- Path to Framework7 Library JS-->
   <script type="text/javascript" src="js/framework7.min.js"></script>
   <!-- Path to your app js-->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.event.move.js"></script>
+  <script type="text/javascript" src="js/jquery.event.swipe.js"></script>
   <script type="text/javascript" src="js/database.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
 </body>
