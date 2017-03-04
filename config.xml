@@ -15,7 +15,7 @@
         Christopher Jáquez
     </author>
 
-    <plugin name="cordova-plugin-whitelist">
+    <plugin name="cordova-plugin-whitelist" />
     
     <icon src="icon.fw.png" />  
     <splash src="splash.fw.png" />
