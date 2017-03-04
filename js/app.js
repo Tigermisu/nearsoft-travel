@@ -8,6 +8,13 @@ var icons = {
     "Entertainment": "img/theatre.png"
 }
 var savedEvents = [];
+var categoryDenyCount = {
+    "Concerts": 0,
+    "Movies": 0,
+    "Parties": 0,
+    "Places": 0,
+    "Entertainment": 0
+}
 
 var app = new Framework7({
     // Default title for modals
@@ -42,6 +49,10 @@ function swipeEvent(direction) {
     if (direction == "right") {
         var activeEventHash = ($('.event-data h2').text() + $('.event-data p').eq(0).text()).hashCode();
         savedEvents.push(getEventID(activeEventHash));
+    } else {
+        var deniedCategory = $('.event-data').data('category');
+        categoryDenyCount[deniedCategory]++;
+        console.log('registered deny for ' + deniedCategory);
     }
     $('.event-photo').addClass(direction);
     setTimeout(function () {
@@ -56,16 +67,30 @@ function prepareNextEvent() {
             return [v];
         });
         eventQueue = shuffle(array);
-    }
+    }    
     var nextEvent = eventQueue.pop();
+    
+    
     if (typeof (nextEvent) != "undefined") {
+        if(eventQueue.length > 2) {
+            var index = eventQueue.length - 2,
+                swapCandidate = eventQueue[index],
+                denyCount = categoryDenyCount[swapCandidate.category],
+                pass = Math.pow(2, -denyCount) >= Math.random();
+
+            if(!pass) {
+                eventQueue.splice(index, 1);
+                eventQueue.unshift(swapCandidate);
+            }            
+        }
+
         var photo = nextEvent.photo,
             $data = $('.event-data');
+        $data.data('category', nextEvent.category);
         $data.find('h2').text(nextEvent.name);
         $data.find('p').eq(0).text(nextEvent.description);
         $data.find('p').eq(1).text(nextEvent.hour + " @ " + nextEvent.address);
         $data.find('.icon.category img').attr('src', icons[nextEvent.category]);
-        //https://www.google.com/maps?q=loc:36.26577,-92.54324
         $data.find('.icon.btn img').data('lat', nextEvent.location.lat).data('lng', nextEvent.location.lng);
         $('.event-photo').css('background-image', 'url(' + photo + ')');
         $('.event-photo').removeClass('left').removeClass('right');

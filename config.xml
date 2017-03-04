@@ -14,8 +14,15 @@
     <author href="http://jaquez.mx" email="chris@jaquez.mx">
         Christopher Jáquez
     </author>
+
+    <plugin name="cordova-plugin-whitelist">
     
-    <icon src="icon.fw.png" />
+    <icon src="icon.fw.png" />  
     <splash src="splash.fw.png" />
+
+    <access origin="*" />
+
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
 
 </widget>

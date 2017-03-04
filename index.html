@@ -21,6 +21,24 @@
 </head>
 
 <body>
+  <!-- First, we need to add Panel's overlay that will overlays app while panel is opened -->
+    <div class="panel-overlay"></div>
+ 
+    <!-- Left panel -->
+    <div class="panel panel-left panel-cover">
+         <div class="content-block">
+          <p>Left Panel content here</p>
+          <!-- Click on link with "close-panel" class will close panel -->
+          <p><a href="#" class="close-panel">Close me</a></p>
+          <!-- Click on link with "open-panel" and data-panel="right" attribute will open Right panel -->
+          <p><a href="#" data-panel="right" class="open-panel">Open Right Panel</a></p>
+        </div>
+    </div>
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
+          <p>stuff goes here</p>
+        </div>
+    </div>
   <!-- Views -->
   <div class="views">
     <!-- Your main view, should have "view-main" class -->
@@ -46,6 +64,7 @@
             <a href="#services">Services</a>
             <a href="#swiper">Swiper</a>
             <a href="#register">register</a>
+            <a href="#" class="open-panel">panel</a>
           </div>
         </div>
         <!-- About page -->
@@ -67,7 +86,7 @@
           <div class="navbar">
             <div class="navbar-inner">
               <div class="left">
-                <i class="icon icon-bars"></i>
+                <a href="#" class="open-panel"><i class="icon icon-bars"></i></a>
               </div>
               <div class="center">
                 What's Next
