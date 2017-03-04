@@ -19,6 +19,7 @@ var categoryDenyCount = {
 var app = new Framework7({
     // Default title for modals
     modalTitle: 'What\'s Next',
+    swipeBackPage: false,
 });
 
 var mainView = app.addView('.view-main', {
@@ -45,6 +46,37 @@ app.onPageInit('swiper', function (page) {
     prepareNextEvent();
 });
 
+app.onPageInit('myevents', function (page) {
+    populateMyEvents();
+});
+
+function populateMyEvents() {
+    var $wrapper = $('#eventsContent');
+    $wrapper.html('');
+    if(savedEvents.length > 0) {
+        for(var i = 0; i < savedEvents.length; i++) {
+            var html = "<li>",
+                event = data.features[savedEvents[i]];
+            html += "<a href='https://www.google.com/maps?q=loc:" + event.location.lat + "," + event.location.lng + "' class='item-link item-content external'>"
+            html +=  '<div class="item-media"><div class="event-list-photo" style="background-image: url(' + event.photo + ')"></div></div>'
+            html += '<div class="item-inner">';
+            html += '<div class="item-title-row">';
+            html += '<div class="item-title">' + event.name + ' </div>';
+            html += '<div class="item-after">'  + event.category +  '</div>';
+            html += "</div>";
+            html += '<div class="item-subtitle">'+ event.hour + ' @ ' + event.address +  '</div>';
+            html += '<div class="item-text">' + event.description + '</div>';
+
+            html += "</div>"
+            html += "</a>";
+            html += "</li>";
+            $wrapper.append(html);
+        }
+    } else {
+        $wrapper.html('<h4 style="text-align: center;">You have no events! Get Swipin\'</h4>')
+    }
+}
+
 function swipeEvent(direction) {
     if (direction == "right") {
         var activeEventHash = ($('.event-data h2').text() + $('.event-data p').eq(0).text()).hashCode();
@@ -54,11 +86,34 @@ function swipeEvent(direction) {
         categoryDenyCount[deniedCategory]++;
         console.log('registered deny for ' + deniedCategory);
     }
+    spawnEmoji(direction == "right");
     $('.event-photo').addClass(direction);
     setTimeout(function () {
         prepareNextEvent();
 
     }, 305); // transition takes 300ms, but css and js are not perfectly in sync
+}
+
+var emojiTimeoutOne, emojiTimeoutTwo;
+
+function spawnEmoji(isLike) {
+    var $emoji = $('.event .emoji');
+    clearTimeout(emojiTimeoutOne);
+    clearTimeout(emojiTimeoutTwo);
+    $emoji.removeClass('like').removeClass('dislike').removeClass('fade');
+    if(isLike) $emoji.addClass('like');
+    else $emoji.addClass('dislike');
+
+    $emoji.css({
+        top: (7  + 2 * (Math.random - 0.5)) + "%",
+    });
+
+    emojiTimeoutOne = setTimeout(function(){
+        $emoji.addClass('fade');
+        emojiTimeoutTwo = setTimeout(function(){
+            $emoji.removeClass('like').removeClass('dislike').removeClass('fade');
+        }, 505);
+    }, 1005)
 }
 
 function prepareNextEvent() {
@@ -99,7 +154,7 @@ function prepareNextEvent() {
             $('.event-transition').css('background-image', 'url(' + nextPhoto + ')');
         } else {
             $('.event-transition').css('background-color', '#333').css('background-image', '')
-                .html('<h4>No hay más eventos que mostrar :(</h4>');
+                .html('<h4>There are no more events near you :(</h4>');
         }
     } else {
         $('.event-data').html('');
