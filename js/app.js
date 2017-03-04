@@ -26,6 +26,30 @@ var mainView = app.addView('.view-main', {
     domCache: true //enable inline pages
 });
 
+$(function(){
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+});
+
+function onDeviceReady() {
+    // Register the event listener
+    document.addEventListener("backbutton", onBackKeyDown, false);
+}
+
+function onBackKeyDown() {
+    if($$('body').hasClass('with-panel-left-cover') || $$('body').hasClass('with-panel-right-cover')) {
+        app.closePanel();
+    } else if(mainView.activePage.name == "register") {
+        mainView.router.back({pageName: 'login'});
+    } else if(mainView.activePage.name != "swiper") {
+        mainView.router.back({pageName: 'swiper'});
+    } else {
+        console.info('exiting');
+        navigator.app.exitApp();
+    }
+    
+}
+
 jQuery.event.special.swipe.settings.threshold = 0.2;
 
 $('.event-photo').on('swipeleft', function () {
@@ -167,8 +191,9 @@ function prepareNextEvent() {
     } else {
         $('.event-data').html('');
     }
-
 }
+
+
 
 function shuffle(a) {
     var j, x, i;

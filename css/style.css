@@ -149,12 +149,12 @@
 }
 
 .emoji.dislike {
-    background-image: url(../img/Sad.png);
+    background-image: url(../img/sad.png);
     left: 10%;
 }
 
 .emoji.like {
-    background-image: url(../img/Happy.png);
+    background-image: url(../img/happy.png);
     right: 10%;
 }
 
