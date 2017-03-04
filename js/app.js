@@ -113,7 +113,6 @@ function getEventID(activeEventHash) {
     }
     return null;
 }
-});
 
 // login handler
 $$('#login').click(function () {
@@ -122,8 +121,7 @@ $$('#login').click(function () {
     // Handle username and password
     $$.each(data.users, function (i, v) {
         if (v.email == username && v.password == password) {
-            mainView.router.load({pageName: 'about'});
-            alert("a");
+            mainView.router.load({pageName: 'swiper'});
         }
     });
 });
