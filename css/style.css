@@ -185,6 +185,30 @@
     background-color: #3f51b5!important
 }
 
+.photo-upload {
+    margin: 24px;
+    padding-bottom: 45%;
+    border: #f0f0f0 solid 1px;
+    background: url(../img/photo.png) no-repeat center center;
+    background-size: 29%;
+}
+
+.upload-list .item-inner:after {
+    display: none !important;
+}
+
+.upload-list input {
+    border-bottom: #999 solid 1px !important;
+}
+
+.upload-list .item-inner {
+    padding-top: 8px !important;
+}
+
+.upload-list input:focus {
+    border-bottom: #3f51b5 solid 1px !important;
+}
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #999 !important;
 }
